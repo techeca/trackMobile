@@ -51,11 +51,21 @@ export default {
           70: '#353542',
           80: '#1C1C23',
           100: '#0E0E12',
+        },
+        'skin': {
+          0: '#FF7F37'
+        },
+        'service': {
+          0: '#CFCFFC'
         }
       },
       dropShadow: {
-        'text-shadow': '0 8px 25px #FF79667a'
+        'text-shadow': '0 8px 25px #FF79667a',
+        'facebook-shadow': '0 8px 25px #1771E67a',
       },
+      boxShadow: {
+        'service-shadow': 'inset 0px 1px 2px 0px rgb(0, 0, 0, 0.3)'
+      }
     },
   },
   plugins: [],
