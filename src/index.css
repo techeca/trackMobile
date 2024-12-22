@@ -16,3 +16,52 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+.dotted-spaced {
+  background-image: url("data:image/svg+xml,%3csvg%20width='100%25'%20height='100%25'%20xmlns='http://www.w3.org/2000/svg'%3e%3crect%20width='100%25'%20height='100%25'%20fill='none'%20rx='100'%20ry='100'%20stroke='%234E4E61'%20stroke-width='4'%20stroke-dasharray='2%2c%208'%20stroke-dashoffset='0'%20stroke-linecap='butt'%2f%3e%3c/svg%3e");
+  border-radius: 100px;
+}
+
+.dotted-spaced2 {
+  background-image: url("data:image/svg+xml,%3Csvg%20width='100%25'%20height='100%25'%20xmlns='http://www.w3.org/2000/svg'%3E%3Crect%20width='100%25'%20height='100%25'%20fill='none'%20rx='100'%20ry='100'%20stroke='%23292932'%20stroke-width='6'%20stroke-dasharray='6%2C%2014'%20stroke-dashoffset='2'%20stroke-linecap='square'%2F%3E%3C%2Fsvg%3E");
+  border-radius: 100px;
+}
+
+.progress-circle {
+  position: relative;
+  width: 120px;
+  height: 120px;
+}
+
+.circular-progress {
+  transform: rotate(-90deg); /* Empieza el progreso desde arriba */
+}
+
+.circular-progress .background {
+  stroke: #30303c; /* Color de fondo del círculo */
+  stroke-linecap: round;
+}
+
+.circular-progress .foreground {
+  stroke: #FF7966; /* Color del arco de progreso */
+  /*stroke-linecap: round; /* Opcional: para suavizar los bordes del arco */
+  filter: drop-shadow(0 0 1px #ff7866);
+}
+
+.circular-progress .foreground1 {
+  stroke: #FF7966; /* Color del arco de progreso */
+  stroke-linecap: round; /* Opcional: para suavizar los bordes del arco */
+  filter: drop-shadow(0 0 1px #ff7866);
+}
+
+.circular-progress .foreground2 {
+  stroke: #00FAD9; /* Color del arco de progreso */
+  /*stroke-linecap: round; /* Opcional: para suavizar los bordes del arco */
+  filter: drop-shadow(0 0 1px #00FAD9);
+}
+
+.circular-progress .foreground3 {
+  stroke: #AD7BFF; /* Color del arco de progreso */
+  /*stroke-linecap: round; /* Opcional: para suavizar los bordes del arco */
+  filter: drop-shadow(0 0 1px #AD7BFF);
+}
