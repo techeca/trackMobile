@@ -5,7 +5,6 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    
     extend: {
       fontSize: {
         xs: '10px',
@@ -66,6 +65,12 @@ export default {
       },
       boxShadow: {
         'service-shadow': 'inset 0px 1px 2px 0px rgb(0, 0, 0, 0.3)'
+      },
+      screens: {
+        '4xs': '375px',
+        '3xs': '390px',
+        '2xs': '410px',
+        'xs': '430px'
       }
     },
   },
