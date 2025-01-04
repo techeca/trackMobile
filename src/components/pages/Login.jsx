@@ -1,7 +1,20 @@
+import { useNavigate } from "react-router-dom";
+import Button from "@components/ui/Button";
+import Input from "@components/ui/Input";
+import { useState } from "react";
+
 export default function Login() {
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const navigate = useNavigate()
+
+    const handleSignIn = (e) => {
+        e.preventDefault()
+        navigate('/app/home')
+    }
 
     return (
-        <div className='flex flex-col gap-3 justify-between border-0 rounded-3xl w-96 items-center h-[812px] bg-nig-80 overflow-hidden'>
+        <div className='flex flex-col gap-3 justify-between w-full h-screen items-center bg-nig-80 overflow-hidden'>
 
             <h1 className='font-semibold text-h4 flex gap-1 items-center py-16'>
                 <span>
@@ -10,17 +23,10 @@ export default function Login() {
                 TRACKIZER
             </h1>
 
-            <div>
+            <form onSubmit={handleSignIn}>
                 <div className="flex flex-col gap-3">
-                    <div className="w-80 flex flex-col gap-1 text-nig-50">
-                        <label htmlFor="email" className="text-sm">Login</label>
-                        <input name="email" type="email" className=" w-full border-nig-70 border-[1px] rounded-2xl h-[48px] px-2 focus:outline-none focus:border-2 focus:border-nig-70" />
-                    </div>
-
-                    <div className="w-80 flex flex-col gap-1 text-nig-50">
-                        <label htmlFor="password" className="text-sm">Password</label>
-                        <input name="password" type="password" className="w-full border-nig-50/30 border-[1px] rounded-2xl h-[48px] px-2 focus:outline-none focus:border-2 focus:border-nig-50" />
-                    </div>
+                    <Input className={`w-80`} text={`Email`} name={'email'} type={'email'} value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <Input className={`w-80`} text={`Password`} name={'password'} type={'password'} value={password} onChange={(e) => setPassword(e.target.value)} />
 
                     <div className="w-80 flex gap-2 text-nig-50 items-center pb-6 pt-3 justify-between">
                         <label className="flex items-center space-x-2">
@@ -48,18 +54,12 @@ export default function Login() {
                         Sign In
                     </span>
                 </button>
-            </div>
+            </form>
 
             <div className="py-9">
                 <p className='w-full text-center text-md font-light py-6 text-nig-0'>If you don't have an account yet?</p>
-
-                <button className='bg-white/10 rounded-3xl px-3 py-3 h-12 w-80 border-[1px] border-b-0 border-nig-0/20 text-nig-0 hover:bg-white/20 transition-colors duration-300 ease-in-out hover:cursor-pointer'>
-                    <span className='text-h2 font-medium'>
-                        Sign Up
-                    </span>
-                </button>
+                <Button onClick={() => navigate('/signUp')} width={324} height={48} text={`Sign Up`} type="simple" />
             </div>
-
 
         </div>
     )
