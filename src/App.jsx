@@ -1,29 +1,39 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import Welcome from './components/Welcome'
-import Register from './components/Register'
-import Register2 from './components/Register2'
-import Login from './components/Login'
-import Home from './components/Home'
-import SpendAndBudget from './components/SpendAndBudget'
-import Calendar from './components/Calendar'
+import { useEffect } from 'react'
+import { useNavigate, useLocation, Outlet } from 'react-router-dom'
+import { motion } from 'motion/react'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const animatedRoutes = ["/welcome", "/signUp", "/signUpWithEmail", "/signIn"];
+  const isAnimatedRoute = animatedRoutes.includes(location.pathname);
+
+  useEffect(() => {
+    //const user = localStorage.getItem('user')
+    if (location.pathname === '/') {
+      navigate('/welcome')
+    }
+  }, [])
 
   return (
-    <div className='flex flex-wrap gap-3 m-3'>
-
-      <Welcome />
-      <Register />
-      <Register2 />
-      <Login />
-      <Home />
-      <SpendAndBudget />
-      <Calendar />
+    <div className="relative w-screen h-screen overflow-hidden">
+      {isAnimatedRoute ? (
+        <motion.div
+          key={location.pathname}
+          initial={{ x: "100%", opacity: 0 }}
+          animate={{ x: "0%", opacity: 1 }}
+          exit={{ x: "-100%", opacity: 0 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+          className="absolute inset-0 flex justify-center items-center w-full"
+        >
+          <Outlet />
+        </motion.div>
+      ) : <Outlet />}
     </div>
   )
 }
 
 export default App
+
+
