@@ -9,7 +9,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #1C1C23;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -31,6 +31,21 @@
   position: relative;
   width: 120px;
   height: 120px;
+}
+
+.circular-progress-main {
+  /*transform: rotate(136deg); /* Empieza el progreso desde arriba */
+}
+
+.circular-progress-main .background {
+  stroke: #30303c; /* Color de fondo del círculo */
+  stroke-linecap: round;
+}
+
+.circular-progress-main .foreground1 {
+  stroke: #FF7966; /* Color del arco de progreso */
+  stroke-linecap: round; /* Opcional: para suavizar los bordes del arco */
+  filter: drop-shadow(0 0 1px #ff7866);
 }
 
 .circular-progress {
